@@ -1,8 +1,8 @@
-![FiveM](https://img.shields.io/badge/FiveM-Resource-blue?style=flat-square)  
-![Lua](https://img.shields.io/badge/Lua-5.4-purple?style=flat-square)  
+![FiveM](https://img.shields.io/badge/FiveM-Resource-blue?style=flat-square)
+![Lua](https://img.shields.io/badge/Lua-5.4-purple?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-# 🎮 ZX FPS Menu
+# 🎮 ZIZOOUX FPS Menu
 
 A clean and optimized **FPS Menu UI** for FiveM servers (QBCore / standalone compatible) designed to help players boost performance, monitor FPS, and improve gameplay experience with a modern interface.
 
@@ -97,9 +97,10 @@ This script is designed with optimization in mind:
 ---
 
 ## 📸 Preview
+<img width="1918" height="1068" alt="Screenshot 2026-04-08 165133" src="https://github.com/user-attachments/assets/76c958ad-8580-46c8-a0e4-a3cdae11ce7b" />
 
 ```html
-<img width="100%" src="YOUR_IMAGE_LINK_HERE" />
+
 ```
 
 ---
@@ -130,7 +131,7 @@ MIT License
 
 ## ❤️ Credits
 
-Developed by **ZX**
+Developed by **ZIZOOUX DEV**
 
 ---
 
