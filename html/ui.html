@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZX FPS Menu</title>
+  <link rel="stylesheet" href="main.css"/>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+
+<div class="outer">
+  <div class="grid-bg"></div>
+  <div class="vline" style="left:20%"></div>
+  <div class="vline" style="left:50%"></div>
+  <div class="vline" style="left:80%"></div>
+  <div class="scan-beam"></div>
+
+
+  <div class="header">
+    <div class="hdr-left">
+      <div class="hdr-icon"><div class="hdr-diamond"></div></div>
+      <div>
+        <div class="hdr-name" id="serverName"></div>
+        <div class="hdr-sub"  id="subName"></div>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="hdr-chip"><div class="chip-dot"></div>ONLINE</div>
+      <div class="hdr-chip" id="menuVersion">v1.0.0</div>
+    </div>
+  </div>
+
+  <div class="hdr-line"></div>
+
+
+  <div class="body">
+
+
+    <div class="fps-row">
+      <div class="fps-main">
+        <div class="fps-tag">Live Output</div>
+        <div class="fps-ring-wrap">
+          <div class="fps-ring"></div>
+          <div class="fps-ring-spin"></div>
+          <div class="fps-ring-spin2"></div>
+          <div class="fps-ring-inner">
+            <div class="fps-big" id="fpsVal">60</div>
+            <div class="fps-hz">FPS</div>
+          </div>
+        </div>
+        <div class="fps-label" id="fpsLabel">STABLE</div>
+      </div>
+
+      <div class="stat-tall">
+        <div class="st-tag">Active Config</div>
+        <div class="st-val" id="activeSetting">NONE</div>
+        <div class="st-sub">Detail Setting</div>
+        <div class="st-divider"></div>
+        <div class="stat-grid">
+          <div class="sg-item">
+            <div class="sg-lbl">PING</div>
+            <div class="sg-val" id="ping">--</div>
+            <div class="sg-bar"><div class="sg-fill" id="pingBar" style="width:10%"></div></div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-lbl">RESOURCES</div>
+            <div class="sg-val" id="files">--</div>
+            <div class="sg-bar"><div class="sg-fill" style="width:65%"></div></div>
+          </div>
+          <div class="sg-item">
+            <div class="sg-lbl">NET LOAD</div>
+            <div class="sg-val" id="perfPct">0%</div>
+            <div class="sg-bar"><div class="sg-fill" id="perfBar" style="width:0%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="sec-head">
+        <div class="sh-mark"></div>
+        <span class="sh-txt">Graphic Mode</span>
+        <span class="sh-ct">[3 PRESETS]</span>
+      </div>
+      <div class="btn-grid" id="fGrid">
+        <div class="xb" onclick="fpschanger(1); setFpsMode(this,'FPS MODE')">
+          <div class="xb-id">G1</div>
+          <div class="xb-lbl">FPS Mode</div>
+        </div>
+        <div class="xb" onclick="fpschanger(2); setFpsMode(this,'FPS BOOST')">
+          <div class="xb-id">G2</div>
+          <div class="xb-lbl">FPS Boost Mode</div>
+        </div>
+        <div class="xb" onclick="fpschanger(3); setFpsMode(this,'ULTRA BOOST')">
+          <div class="xb-id">G3</div>
+          <div class="xb-lbl">Ultra FPS Boost</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="sec-head">
+        <div class="sh-mark"></div>
+        <span class="sh-txt">Detailed Settings</span>
+        <span class="sh-ct">[4 OPTIONS]</span>
+      </div>
+      <div class="btn-grid" id="dGrid">
+        <div class="xb" onclick="advancedchanger(1); setSetting(this,'FPS+')">
+          <div class="xb-id">A1</div>
+          <div class="xb-lbl">FPS+ Graphics</div>
+        </div>
+        <div class="xb" onclick="advancedchanger(2); setSetting(this,'ADVANCED')">
+          <div class="xb-id">A2</div>
+          <div class="xb-lbl">Advanced Graphics</div>
+        </div>
+        <div class="xb" onclick="advancedchanger(3); setSetting(this,'LIGHT')">
+          <div class="xb-id">A3</div>
+          <div class="xb-lbl">Extra Light</div>
+        </div>
+        <div class="xb" onclick="advancedchanger(4); setSetting(this,'ULTRA')">
+          <div class="xb-id">A4</div>
+          <div class="xb-lbl">Ultra Quality</div>
+        </div>
+        <div class="xb red" onclick="resetAdvanced()">
+          <div class="xb-id">RST</div>
+          <div class="xb-lbl">Reset Advanced</div>
+        </div>
+        <div class="xb red span2" onclick="reset()">
+          <div class="xb-id">!!!</div>
+          <div class="xb-lbl">Reset ALL Settings</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="footer-line"></div>
+  <div class="footer">
+    <div class="ft-links">
+      <div class="ft-lnk"><i class="fa-solid fa-globe"></i><span id="web"></span></div>
+      <div class="ft-lnk"><i class="fa-brands fa-discord"></i><span id="discord"></span></div>
+    </div>
+    <span class="ft-esc">Press <kbd>ESC</kbd> to close</span>
+    <span class="ft-ver">ZX_FPSMENU <span id="ver"></span><span class="cur">_</span></span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js.js"></script>
+</body>
+</html>
